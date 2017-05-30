@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#CDDC39</color>
+    <color name="colorPrimaryDark">#C0CA33</color>
+    <color name="colorAccent">#827717</color>
+    <color name="white">#fff</color>
+    <color name="charcoalGrey">#3b4046</color>
+    <color name="turquoiseBlue">#827717</color>
+</resources>

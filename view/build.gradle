@@ -1,0 +1,76 @@
+buildscript {
+    ext.support_v4_version = '1.1.1'
+    ext.support_v7_version = '1.1.1'
+    ext.google_services_version = '1.1.1'
+    ext.moxy_version = '1.5.3'
+    ext.tools_version = '25.3.1'
+    ext.rxbindings_version = '2.0.0'
+
+
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.social.com"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "2.001"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+}
+
+dependencies {
+    compile "com.arello-mobile:moxy:$moxy_version"
+    compile "com.arello-mobile:moxy-app-compat:$moxy_version"
+    kapt "com.arello-mobile:moxy-compiler:$moxy_version"
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile "com.google.dagger:dagger:$dagger_version"
+    compile "io.reactivex.rxjava2:rxjava:$rxjava_version"
+    compile "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
+    compile "com.jakewharton.rxbinding2:rxbinding:$rxbindings_version"
+    compile "com.jakewharton.rxbinding2:rxbinding-support-v4:$rxbindings_version"
+
+
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile "com.android.support:appcompat-v7:$tools_version"
+    compile "com.android.support:design:$tools_version"
+
+    testCompile 'junit:junit:4.12'
+    compile project(path: ':domain')
+    compile project(path: ':data')
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+
+}
+
+
+repositories {
+    mavenCentral()
+}

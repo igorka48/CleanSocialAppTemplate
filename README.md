@@ -1,7 +1,10 @@
 # CleanSocialAppTemplate
-Android Social App templete with Clean Achitecture
-
 Abstract social network client.
+This project is representation on typical social network.
+It contains all usually used parts: signup section, contacts, news feed, etc.
+Data layer has repositories for data mock.
+
+
 Base of architecture taken from Fernando Cejas Clean Achitecture sample.
 https://github.com/android10/Android-CleanArchitecture
 

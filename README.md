@@ -7,7 +7,7 @@ It contains all usually used parts: signup section, contacts, news feed, etc.
 Data layer has repositories for data mock.
 
 
-Base of architecture taken from Fernando Cejas Clean Achitecture sample.
+Base of architecture taken from Fernando Cejas Clean Architecture sample.
 https://github.com/android10/Android-CleanArchitecture
 
 But, this project uses Kotlin.

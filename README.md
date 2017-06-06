@@ -1,7 +1,9 @@
 # CleanSocialAppTemplate
 Abstract social network client.
 This project is representation on typical social network.
+
 It contains all usually used parts: signup section, contacts, news feed, etc.
+
 Data layer has repositories for data mock.
 
 

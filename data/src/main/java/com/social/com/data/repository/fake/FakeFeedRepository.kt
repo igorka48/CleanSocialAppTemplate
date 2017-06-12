@@ -13,22 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.social.com.data.repository.fake.datasource
+package com.social.com.data.repository.fake
 
+import com.social.com.data.repository.fake.datasource.tutorial.FeedFakeProvider
 import com.social.com.domain.model.Feed
+import com.social.com.domain.repository.FeedRepository
 import com.social.com.domain.repository.TutorialRepository
+import io.reactivex.Observable
+import javax.inject.Inject
 
 /**
  * [TutorialRepository] for retrieving user data.
  */
-class FakeFeedRepository @javax.inject.Inject
-internal constructor(val feedRepository: com.social.com.data.repository.fake.datasource.tutorial.FeedFakeProvider) : com.social.com.domain.repository.FeedRepository {
+class FakeFeedRepository
+@Inject internal constructor(val feedRepository: FeedFakeProvider) : FeedRepository {
 
     init {
         android.util.Log.d("DAGGER TEST", "" + this::class.java.name)
     }
 
-    override fun feed(): io.reactivex.Observable<List<Feed>> {
-        return io.reactivex.Observable.just(feedRepository.getFeedData())
+    override fun feed(): Observable<List<Feed>> {
+        return Observable.just(feedRepository.getFeedData())
     }
 }

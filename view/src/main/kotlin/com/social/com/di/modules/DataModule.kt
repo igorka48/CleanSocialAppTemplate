@@ -15,6 +15,7 @@
  */
 package com.social.com.di.modules
 
+import com.social.com.data.repository.fake.FakeFeedRepository
 import com.social.com.data.repository.fake.datasource.*
 import com.social.com.domain.repository.*
 import dagger.Module
